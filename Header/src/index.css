@@ -3,7 +3,6 @@
     margin:auto;
     width: 840px;
     height: 588.5px;
-    background-color: RED;
     font-family: 'Muli', sans-serif;
 
 }
@@ -13,7 +12,6 @@
     margin-left:52.5px;
     margin-right:52.5px;
     height: 588.5px;
-    background-color:yellow;
   
   }
   .Bitmap {
@@ -24,7 +22,6 @@
     /* opacity: 0.3;
     -webkit-filter: blur(3px);
     filter: blur(3px); */
-    
     background-image: url("background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -56,5 +53,10 @@
     margin-bottom: 31.5px;
     font-size: 11px;
     font-weight: 600;
+}
+.search{
+   margin-top: 15px;
+   margin-left: 15px;
+  
 }
 @import url('https://fonts.googleapis.com/css?family=Muli:400'); 
