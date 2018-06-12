@@ -1,5 +1,104 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+.body 
+{
+    margin:auto;
 }
+.Rectangle-3 {
+
+    width: 87.5%;
+    display: flex;
+    background-color: green; 
+    flex-direction: column;
+    margin-left:6.25%;
+    margin-right:6.25%;
+    
+  }
+  .Div1 {
+    width: 100%;
+    height: 17vh;
+    background-image: url("background.jpg");
+  
+    
+  }
+  .Div2 {
+    display: inline-block;
+    display: flex;
+    width: 100%;
+    height: 6vh;
+    background-color: yellow; 
+    margin-top:1.3%;
+    flex-direction: row;
+  
+  }
+
+  .Tag {
+    
+    width: 66%;
+    height: 100%;
+    background-color: white;
+  
+  }
+
+  .Div3 {
+    display: inline-block;
+    display: flex;
+    width: 100%;
+    height: auto;
+    background-color: red; 
+    margin-right:2%;
+    margin-top:2%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  
+  }
+
+.Rectangle-2
+{
+  width:31.5%;
+}
+  /*
+  .Bitmap {
+    width: 705px;
+    height: 100px;
+    margin-left: 15px;
+    margin-right: 15px;
+     opacity: 0.3;
+    -webkit-filter: blur(3px);
+    filter: blur(3px); 
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+  }
+
+.Wall-of-Contribution 
+  {
+    display: flex;
+    justify-content: flex-start;
+    width: 300px;
+    height: 28px;
+    margin-left: 21.5px;
+    margin-top: 29px;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-align: center;
+    text-shadow: 0 1px 0 #000000;
+    font-family: 'Muli', sans-serif;
+}
+
+.Coming-together-is-a {
+    width: 600px;
+    margin-left: 21.5px;
+    margin-bottom: 31.5px;
+    font-size: 11px;
+    font-weight: 600;
+}
+.search{
+   margin-top: 15px;
+   margin-left: 15px;
+  
+}*/
+@import url('https://fonts.googleapis.com/css?family=Muli:400'); 

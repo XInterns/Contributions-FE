@@ -1,0 +1,53 @@
+.bar
+{
+   display: flex;
+}
+.Search
+{
+    width:32%;
+    height: 100%;
+    border-radius: 1px;
+    margin-left:2%;
+    background-color: #ffffff;
+    border: solid 0.5px #4a90e2;
+       
+}
+.tag {
+    margin-top :15px;
+    margin-left: 15px;
+    width: 465px;
+    height: 25px;
+    border-radius: 1px;
+    background-color: #ffffff;
+    border: solid 0.5px rgba(151, 151, 151, 0.2);
+  }
+  .Searchbox {
+    width:85%;
+    height: 100%;
+    border-radius: 1px;
+    background-color: cyan;
+    border: solid 0.5px rgba(151, 151, 151, 0.2);
+  }
+  .button {
+    width: 15%;
+    height: 100%;
+    border-radius: 1px;
+    background-color:grey;
+    border: solid 0.5px rgba(151, 151, 151, 0.2);
+  }
+  .go{
+        width: 13px;
+        height: 10px;
+        font-family: Muli;
+        font-size: 8px;
+        font-weight: 600;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 0.4px;
+        color: #ffffff;
+      
+  }
+
+
+   
