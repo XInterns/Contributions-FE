@@ -1,62 +1,175 @@
-.wall 
+.body 
 {
     margin:auto;
-    width: 840px;
-    height: 588.5px;
-    font-family: 'Muli', sans-serif;
-
 }
 .Rectangle-3 {
 
-    width: 735px;
-    margin-left:52.5px;
-    margin-right:52.5px;
-    height: 588.5px;
-  
-  }
-  .Bitmap {
-    width: 705px;
-    height: 100px;
-    margin-left: 15px;
-    margin-right: 15px;
-    /* opacity: 0.3;
-    -webkit-filter: blur(3px);
-    filter: blur(3px); */
-    background-image: url("background.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    width: 87.5%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    color: #ffffff;
+    margin-left:6.25%;
+    margin-right:6.25%;
+    
+  }
+  .Div1 {
+    width: 100%;
+    height: 17vh;
+    background-image: url("background.jpg");    
   }
 
-.Wall-of-Contribution 
-  {
+        .Wall-of-Contribution
+        {
+          display: flex;
+          justify-content: flex-start;
+          height: 25%;
+          width: 100%;
+          margin-left:3.14%;
+          margin-top:20px;
+          color: white;
+          font-size: 30px;
+          font-weight: 900;
+          letter-spacing: 1px;
+          text-shadow: 0 1px 0 #000000;
+          font-family: 'Muli', sans-serif;
+        }
+
+        .Coming-together-is-a{
+          width: 100%;
+          color: #ffffff;
+          margin-left:3.14%;
+          margin-top:6px; 
+          font-size: 19px;
+          /* font-weight: 600; */
+          font-family: 'Muli', sans-serif;
+        }
+
+  .Div2 {
+    display: inline-block;
     display: flex;
-    justify-content: flex-start;
-    width: 300px;
-    height: 28px;
-    margin-left: 21.5px;
-    margin-top: 29px;
-    font-size: 20px;
-    font-weight: 900;
-    letter-spacing: 1px;
-    text-align: center;
-    text-shadow: 0 1px 0 #000000;
-    font-family: 'Muli', sans-serif;
+    width: 100%;
+    height: 6vh;
+    margin-top:1.3%;
+    flex-direction: row;
+  
+  }
+
+  .Tag {
+    
+    width: 66%;
+    height: 100%;
+    background-color: white;
+    border: solid 0.5px rgba(151, 151, 151, 0.2);
+  
+  }
+  .Search
+{
+    width:32%;
+    height: 100%;
+    margin-left:2%;
+  
+       
 }
 
-.Coming-together-is-a {
-    width: 600px;
-    margin-left: 21.5px;
-    margin-bottom: 31.5px;
-    font-size: 11px;
-    font-weight: 600;
+  .Div3 {
+   
+    width: 100%;
+    height: 100%;
+    background-color: plum; 
+    margin-top: 1.3%;
+    display: grid;
+    grid-column-gap: 2%;
+    grid-row-gap: 11%;
+    grid-template-columns: 32% 32% 32%;
+
+    
+
+  }
+
+.Rectangle-2
+{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  width:100%;
+  height: 135%;
+  background-color:white;
+  margin-bottom: 2%;
 }
-.search{
-   margin-top: 15px;
-   margin-left: 15px;
+
+@media (min-width: 550px) and (max-width: 767px) {
+  .Div1 {
+    height: 14vh;
+  }
+        .Wall-of-Contribution{
+          font-size: 25px;
+        }
+
+        .Coming-together-is-a{
+          font-size: 12px;
+        }
+
+  .Div2 {
+    height: 4vh;
+  }
+  .Div3{
+    display: grid;
+    grid-column-gap: 2%;
+    grid-row-gap: 3%;
+    grid-template-columns: auto auto;
+  }
+  .Rectangle-2
+  {
+    width:100%;
+    
+  }
+  
+}
+@media (max-width: 550px) 
+{
+  .Div1 {
+    height: 100px;
+  } 
+
+        .Wall-of-Contribution{
+          font-size: 19px;
+        }
+
+        .Coming-together-is-a{
+          font-size: 11px;
+        }
+
+  .Div2 {
+    height: 50px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+        .Tag {
+          height: 50%;
+          width: 100%;
+          background-color: pink;
+        
+        }
+        .Search
+        {
+          height: 50%;
+          width: 100%;
+          background-color: blue; 
+          margin-top: 1.3%; 
+          margin-left:0%;
+        }
+
+  .Div3{
+    display: grid;
+    grid-column-gap: 2%;
+    grid-row-gap: 3%;
+    grid-template-columns: auto;
+  }
+  
+  .Rectangle-2
+  {
+    border:2px;
+    border-color: black;
+    width:100%;
+    margin-top: 4%;
+  }
   
 }
 @import url('https://fonts.googleapis.com/css?family=Muli:400'); 

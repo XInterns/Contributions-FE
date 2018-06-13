@@ -1,5 +1,17 @@
 import React, { Component } from 'react';
-import './Search.css';
+import './index.css'
+import './Search.css'
+    
+function debounce(fn, delay) {
+  var timer = null;
+  return function () {
+    var context = this, args = arguments;
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+      fn.apply(context, args);
+    }, delay);
+  };
+}
 
 class Search extends Component {
   constructor(props)
@@ -9,36 +21,34 @@ class Search extends Component {
          value:'',
     }
     this.onValChange = this.onValChange.bind(this);
-    this.onButtonClick = this.onButtonClick.bind(this);
-      
+    this.onButtonClick = this.onButtonClick.bind(this); 
   }
   
-  onValChange(event)
-  {
-    
+  componentWillMount() {
+    this.handleSearchDebounced = debounce(function (id) {
+      this.props.onValueChange(id)
+    }, 1000);
+  }
+
+  onValChange(event) {
     this.setState({
-      value:event.target.value,
+      value: event.target.value,
     })
-      var id=this.state.value;
-      {this.props.onValueChange(id)}
-      console.log(id);
-    
-    
-  }
-  
-  onButtonClick()
-  {
-    var id=this.state.value;
+    this.handleSearchDebounced(event.target.value);
+  }  
+
+  onButtonClick() {
+    var id = this.state.value;
     this.props.onGoClick(id);
   }
+
   render() {
     return (
-      <div className="bar"> 
-        <div>
-        <input type="textfield" className="tag"  disabled></input>
+      <div className="Div2">
+        <div className="Tag">
         </div>
-        <div class="search">
-          <input type="text" class="Search" debounceTimeout={2000} minLength={2} value={this.state.value} placeholder="Search Here"  onChange={this.onValChange}></input>
+        <div className="Search">
+          <input className="Searchbox" type="text" value={this.state.value} placeholder="Search Here" onChange={this.onValChange} ></input>
           <button type="submit" className="button" onClick={this.onButtonClick}><span className="go">Go</span></button>
         </div>
       </div>
