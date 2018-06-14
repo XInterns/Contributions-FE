@@ -1,17 +1,9 @@
 import React, { Component } from 'react';
-import pics from './sw.jpg'
+import pics from './sw.jpg';
 import Search from './Search';
 import './App.css'
 import './Search.css'
-class Name extends React.Component {
-  render() {
-    return (
-      <div className="name">
-        {this.props.name}
-      </div>
-    )
-  }
-}
+import Name from './Components/Name';
 
 class Picture extends React.Component {
     constructor(props) {
@@ -33,7 +25,7 @@ class Picture extends React.Component {
     return (
       <div className="pic">
         {this.Seperate()}
-      </div>
+    </div>
 
 
     )
@@ -43,32 +35,53 @@ class Picture extends React.Component {
 class Contribute extends React.Component {
   render() {
     return (
-      <div className="contribution">
-        {this.props.content}
+      <div className="contribution" onclick="document.getElementById('id01').style.display='block'">
+        {
+          this.props.content
+          }
       </div>
+    
     )
   }
 }
 
 class Date extends React.Component {
+  constructor(props) {
+    super(props)
+    this.Seperate = this.Seperate.bind(this);
+  }
+  Seperate() {
+    var date = this.props.date;
+    var divide = date.split("T");
+    return divide[0];
+  }
   render() {
     return (
       <div className="date">
-        {this.props.date}
+        {
+          this.Seperate()
+          }
       </div>
     )
   }
 }
 
 class Box extends React.Component {
+  constructor(props) {
+    super(props)
+    this.Seperate = this.Seperate.bind(this);
+  }
+  Seperate() {
+    return "hi";
+  }
 
   render() {
     return (
-      <div className="Rectangle-2" >
-        <Picture pic={(this.props.it).name} />
-        <Name name={(this.props.it).name} />
-        <Date date={(this.props.it).mass + "may"} />
-        <Contribute content={"Contribution: dassdas dassdas sdasdsa dsadsa s sa da sdassd" + (this.props.it).height} />
+      <div className="Rectangle-2" onClick="this.Seperate">
+        <Picture pic={(this.props.it).contributor_name} />
+        <Name name={(this.props.it).contributor_name} />
+        <Date date={(this.props.it).creation_date} />
+        <Contribute content={(this.props.it).message} />
       </div>
     )
   }
@@ -97,17 +110,36 @@ class Box extends React.Component {
     {
      this.componentDid(id);
      this.setState({
-      isLoading : true
+      isLoading : false,
       });
     }
-
-    componentDid(id) {
-      fetch(`https://swapi.co/api/people/?search=${id}`)
+    componentDidMount()
+    {
+      fetch(`http://192.168.3.158:5000/`)
         .then((response) => response.json())
         .then(
           parsedJson => {
             this.setState({
-              items: parsedJson.results,
+              items: parsedJson,
+              isLoading: false,
+            });
+          })
+        .catch(
+          (error) => {
+            this.setState({
+              error,
+              isLoading: false
+            });
+          }
+        )
+    }
+    componentDid(id) {
+      fetch(`http://192.168.3.158:5000/search/${id}`)
+        .then((response) => response.json())
+        .then(
+          parsedJson => {
+            this.setState({
+              items: parsedJson,
               isLoading: false,
             });
           })
@@ -141,8 +173,9 @@ class Box extends React.Component {
                 this.renderBox(item)
               ))
             }
+            {this.state.isLoading === true ? <div className="Loading"></div> : <div />}
           </div>
-          {this.state.isLoading === true ? <div className="Loading"></div> : <div />}
+          
         </div>
       )
     }
