@@ -1,93 +1,9 @@
 import React, { Component } from 'react';
-import pics from './sw.jpg';
-import Search from './Search';
-import './App.css'
-import './Search.css'
-import Name from './Components/Name';
+import Search from '../Search/';
+import './index.css'
+import Box from '../Box/';
 
-class Picture extends React.Component {
-    constructor(props) {
-    super(props)
-    this.Seperate = this.Seperate.bind(this);
-  }
-  Seperate() {
-    var String_name = this.props.pic;
-    var divide = String_name.split(" ");
-    if (divide.length == 1) {
-      return divide[0][0].toUpperCase();
-    }
-    else {
-      return divide[0][0].toUpperCase() + divide[(divide.length) - 1][0].toUpperCase();
-    }
-  }
-
-  render() {
-    return (
-      <div className="pic">
-        {this.Seperate()}
-    </div>
-
-
-    )
-  }
-}
-
-class Contribute extends React.Component {
-  render() {
-    return (
-      <div className="contribution" onclick="document.getElementById('id01').style.display='block'">
-        {
-          this.props.content
-          }
-      </div>
-    
-    )
-  }
-}
-
-class Date extends React.Component {
-  constructor(props) {
-    super(props)
-    this.Seperate = this.Seperate.bind(this);
-  }
-  Seperate() {
-    var date = this.props.date;
-    var divide = date.split("T");
-    return divide[0];
-  }
-  render() {
-    return (
-      <div className="date">
-        {
-          this.Seperate()
-          }
-      </div>
-    )
-  }
-}
-
-class Box extends React.Component {
-  constructor(props) {
-    super(props)
-    this.Seperate = this.Seperate.bind(this);
-  }
-  Seperate() {
-    return "hi";
-  }
-
-  render() {
-    return (
-      <div className="Rectangle-2" onClick="this.Seperate">
-        <Picture pic={(this.props.it).contributor_name} />
-        <Name name={(this.props.it).contributor_name} />
-        <Date date={(this.props.it).creation_date} />
-        <Contribute content={(this.props.it).message} />
-      </div>
-    )
-  }
-}
-
-  class Rectangle extends React.Component
+class Rectangle extends Component
   {
     constructor(props) {
       super(props)
@@ -110,17 +26,17 @@ class Box extends React.Component {
     {
      this.componentDid(id);
      this.setState({
-      isLoading : false,
+      isLoading : true,
       });
     }
     componentDidMount()
     {
-      fetch(`http://192.168.3.158:5000/`)
+      fetch(`https://swapi.co/api/people/?search=r2`)
         .then((response) => response.json())
         .then(
           parsedJson => {
             this.setState({
-              items: parsedJson,
+              items: parsedJson.results,
               isLoading: false,
             });
           })
@@ -134,12 +50,12 @@ class Box extends React.Component {
         )
     }
     componentDid(id) {
-      fetch(`http://192.168.3.158:5000/search/${id}`)
+      fetch(`https://swapi.co/api/people/?search=${id}`)
         .then((response) => response.json())
         .then(
           parsedJson => {
             this.setState({
-              items: parsedJson,
+              items: parsedJson.results,
               isLoading: false,
             });
           })

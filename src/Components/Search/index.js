@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './index.css'
-import './Search.css'
     
 function debounce(fn, delay) {
   var timer = null;
