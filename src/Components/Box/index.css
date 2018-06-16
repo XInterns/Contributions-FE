@@ -1,0 +1,56 @@
+.Rectangle-2
+{
+  position: relative;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  width:100%;
+  height: fit-content;
+  background-color:white;
+
+}
+.Rectangle-2:hover
+{
+    -webkit-box-shadow: 0px 0px 200px #000000;
+    box-shadow: 0px 0px 4px 0px #000000;
+    z-index: 2;
+    height: auto;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.5);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.5);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    -webkit-transform: scale(1.0);
+    -ms-transform: scale(1.0);
+    transform: scale(1.0);
+    
+    
+}
+.Rectangle-2:hover .contribution
+{
+  overflow: visible;
+  white-space: normal;
+  height: auto;
+}
+
+@media (min-width: 550px) and (max-width: 767px) {
+    .Rectangle-2
+    {
+      width:100%;
+      
+    }
+}
+
+@media (max-width: 550px) {
+    .Rectangle-2
+    {
+      border:2px;
+      border-color: black;
+      width:100%;
+      margin-top: 4%;
+    }
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Muli:400'); 

@@ -1,8 +1,7 @@
 import React  from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import bg from './background.jpg';
-import Rectangle from './App';
+import Rectangle from './Components/Rectangle/';
 class Index extends React.Component {
     render() {
         return (

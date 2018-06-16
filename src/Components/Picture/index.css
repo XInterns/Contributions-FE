@@ -1,0 +1,16 @@
+.pic{
+    margin-top:5%;
+    margin-left:5%;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: lavender;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 14px;
+    font-weight: 900;
+    color: blue;
+    font-family: 'Muli', sans-serif;
+  }
+  
