@@ -1,0 +1,34 @@
+.bar
+{
+   display: flex;
+}
+ .Searchbox {
+    width:85%;
+    height: 100%;
+    background-image: url("icon.svg"); 
+    background-repeat: no-repeat;
+    background-size: 7%;
+    background-position-x: 4%;
+    background-position-y: 50%;
+    background-color: white;
+    text-indent:15%;
+    border: solid 0.5px #4a90e2;
+  }
+  .button {
+    width: 15%;
+    height: 100%;
+    background-color:#4a90e2;
+    border: solid 0.5px rgba(151, 151, 151, 0.2);
+  }
+
+  .go{
+        font-family: 'Muli',sans-serif;
+        font-size: 100%;
+        font-weight: 600;
+        letter-spacing: 0.4px;
+        color: #ffffff;
+      
+  } 
+
+
+   
