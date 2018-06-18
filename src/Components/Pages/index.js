@@ -29,19 +29,13 @@ export default class Page extends Component{
  render (){
      var i;
      var limit=this.props.total<5?this.props.total:5;
-
-    //  console.log('total pages are '+this.props.total)
-    //  console.log('\nCurrent page is '+this.props.curr)
-    //  console.log('\nlimit is '+limit)
-     var buttons=[];
+      var buttons=[];
      var start=this.props.curr<4?1:((this.props.total-this.props.curr)<3?(this.props.total)-4:(this.props.curr-2));
      buttons.push(<button onClick={this.changeVal} value={1}>&laquo;</button>)
     
      for(i=0;i<limit;i++)
     {
-        buttons.push(' ');
         buttons.push(this.createButton(start));
-      //  console.log(' '+start);
         start++;
 
     }

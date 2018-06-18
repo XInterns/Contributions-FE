@@ -39,10 +39,8 @@ class Rectangle extends Component
     }
     componentDidMount(pa)
     {
-      console.log('\nThis is pa'+pa)
       if(pa==undefined)
         pa='';
-      console.log('\nQuery is '+`https://swapi.co/api/people/?search=${this.state.query}${pa}`)
       fetch(`https://swapi.co/api/people/?search=${this.state.query}${pa}`)
         .then((response) => response.json())
         .then(
@@ -75,9 +73,6 @@ class Rectangle extends Component
           </div>
 
           <Search onValueChange={this.onGoClick} onGoClick={this.onGoClick} />
-          {/* {
-            console.log('\nWith query '+this.state.query+'\nTotal records '+this.state.total+'\n TOtal length gonna be '+((this.state.items).length)+'\n TOtal pages gonna be '+Math.ceil(parseInt(this.state.total)/((this.state.items).length)))
-          } */}
           <div className="Div3">
             {
               this.state.items.map(item => (
