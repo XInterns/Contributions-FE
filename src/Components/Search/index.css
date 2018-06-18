@@ -7,11 +7,11 @@
     height: 100%;
     background-image: url("icon.svg"); 
     background-repeat: no-repeat;
-    background-size: 7%;
+    background-size: 20px;
     background-position-x: 4%;
     background-position-y: 50%;
     background-color: white;
-    text-indent:15%;
+    text-indent:35px;
     border: solid 0.5px #4a90e2;
   }
   .button {
@@ -31,4 +31,20 @@
   } 
 
 
-   
+  @media (max-width: 480px) {
+  
+    .Searchbox {
+      background-size: 17px;
+      text-indent:40px;
+    }
+
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+  
+    .Searchbox {
+      background-size: 17px;
+      text-indent:30px;
+    }
+  
+  }
