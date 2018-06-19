@@ -11,17 +11,15 @@ class Rectangle extends Component
         items: [],
         isLoading: false,
       }
-      this.onValChange = this.onValChange.bind(this);
       this.onGoClick = this.onGoClick.bind(this);
+      this.onSee=this.onSee.bind(this);
     }
 
-    onValChange(id)
+    onSee()
     {
-      this.componentDid(id);
-      this.setState({
-        isLoading : true
-       });
-    } 
+      console.log("hi");
+      this.componentDidMount();
+    }
     onGoClick(id)
     {
      this.componentDid(id);
@@ -31,7 +29,7 @@ class Rectangle extends Component
     }
     componentDidMount()
     {
-      fetch(`https://swapi.co/api/people/?search=r2`)
+      fetch(`https://swapi.co/api/people/`)
         .then((response) => response.json())
         .then(
           parsedJson => {
@@ -81,7 +79,8 @@ class Rectangle extends Component
             <div className="Coming-together-is-a">Coming together is a beginning. Keeping together is progress. Working together is success.</div>
           </div>
 
-          <Search onValueChange={this.onValChange} onGoClick={this.onGoClick} />
+          <Search onValueChange={this.onGoClick} onGoClick={this.onGoClick} SeeAll={this.onSee}/>
+
 
           <div className="Div3">
             {

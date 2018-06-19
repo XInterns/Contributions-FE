@@ -12,8 +12,8 @@ export default class Box extends Component {
         <div className="Rectangle-2">
           <Picture pic={(this.props.it).name} />
           <Name name={(this.props.it).name} />
-          <Date date={(this.props.it).height} />
-          <Contribution content={(this.props.it).mass+"sadjkandkjasndjaskndkasjndaskjjd bnkjasnbdkjasdkjasbdkaj sbddkjasjbdkja sjbdkjasbdasskj jdbaskjjdbsakj dbaskjbdkjas jbdkjasbdkja sjbdkjasbdkasd bsaskjjdbsak jdbkjasdjasjdk jasjdbasbdkja sbdkjasbdkjas bdjkasdb b"} />
+          <Date date={(this.props.it).mass} />
+          <Contribution content={(this.props.it).height+"sdfksdf dsf f sdf dsf dsf sdf ds fds sadhasd dsad as d asd sa  sadasd sadasddd ddsd"} />
         </div>
       )
     }
