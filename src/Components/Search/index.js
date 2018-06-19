@@ -60,7 +60,7 @@ SeeAll()
 
   componentDidMount()
   {
-    fetch(`https://swapi.co/api/people/?search=a`)
+    fetch(`https://swapi.co/api/planets/`)
       .then((response) => response.json())
       .then(
         parsedJson => {
@@ -76,6 +76,7 @@ SeeAll()
             error,
             isLoading: false
           });
+          console.log("jo")
         }
       )
   }
@@ -91,7 +92,7 @@ SeeAll()
       <div className="Div2">
         <div className="Tag">
           {
-            this.state.items.slice(0,5).map(item => (
+            this.state.items.slice(0,4).map(item => (
               this.renderTag(item)
             ))
           }

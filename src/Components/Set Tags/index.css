@@ -1,17 +1,5 @@
-.Tag_Element:hover{
-    -webkit-box-shadow: 0px 0px 200px #000000;
-    box-shadow: 0px 0px 4px 0px #000000;
-    z-index: 2;
-    height: auto;
-    -webkit-transition: all 200ms ease-in;
-    -webkit-transform: scale(1.5);
-    -ms-transition: all 200ms ease-in;
-    -ms-transform: scale(1.5);
-    -moz-transition: all 200ms ease-in;
-    -moz-transform: scale(1.5);
-    -o-transition: all 200ms ease-in;
-    transition: all 200ms ease-in;
-    -webkit-transform: scale(1.0);
-    -ms-transform: scale(1.0);
-    transform: scale(1.0);
+.Tag_Element{
+    font-display: normal;
+    background: normal;
+   
 }

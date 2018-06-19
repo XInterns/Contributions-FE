@@ -24,7 +24,7 @@
     -webkit-transform: scale(1.0);
     -ms-transform: scale(1.0);
     transform: scale(1.0);
-    
+    cursor: pointer;
     
 }
 .Rectangle-2:hover .contribution
@@ -38,7 +38,7 @@
     .Rectangle-2
     {
       width:100%;
-      
+      margin-top: 4%;
     }
 }
 

@@ -4,7 +4,6 @@ import Name from '../Name';
 import Picture from '../Picture';
 import Date from '../Date';
 import Contribution from '../Contribution';
-
 export default class Box extends Component {
 
     render() {
@@ -12,8 +11,8 @@ export default class Box extends Component {
         <div className="Rectangle-2">
           <Picture pic={(this.props.it).name} />
           <Name name={(this.props.it).name} />
-          <Date date={(this.props.it).mass} />
-          <Contribution content={(this.props.it).height+"sdfksdf dsf f sdf dsf dsf sdf ds fds sadhasd dsad as d asd sa  sadasd sadasddd ddsd"} />
+          <Date date={(this.props.it).mass+"/08/2019"} />
+          <Contribution content={(this.props.it).height+"this is a sample https://www.facebook.com/ data i am working on to check the worrking of my code and  front end then ill intigrate it with backend"}/>
         </div>
       )
     }
