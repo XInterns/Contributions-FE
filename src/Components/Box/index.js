@@ -9,11 +9,7 @@ export default class Box extends Component {
 
     render() {
       return (
-<<<<<<< HEAD
         <div className="Rectangle-2" onClick="return true">
-=======
-        <div className="Rectangle-2">
->>>>>>> 29f9dcc7820d62896e1e0a27d8f89248002acb2b
          
           <div className="row1">
 

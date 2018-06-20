@@ -40,11 +40,7 @@
         /* background-color:burlywood; */
       }
 
-<<<<<<< HEAD
 .Rectangle-2:focus, .Rectangle-2:hover
-=======
-.Rectangle-2:hover
->>>>>>> 29f9dcc7820d62896e1e0a27d8f89248002acb2b
 {
     -webkit-box-shadow: 0px 0px 200px #000000;
     box-shadow: 0px 0px 10px 0px blue;
@@ -72,9 +68,6 @@
   cursor: pointer;
 }
 
-<<<<<<< HEAD
-
-
 
 @media (min-width: 481px) and (max-width: 767px) {
     .Rectangle-2{
@@ -88,6 +81,4 @@
     }
 }
 
-=======
->>>>>>> 29f9dcc7820d62896e1e0a27d8f89248002acb2b
 @import url('https://fonts.googleapis.com/css?family=Muli:400'); 

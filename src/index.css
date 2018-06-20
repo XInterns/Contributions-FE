@@ -42,52 +42,8 @@
           font-family: 'Muli', sans-serif;
         }
 
-<<<<<<< HEAD
 @media (min-width: 481px) and (max-width: 767px) 
 {
-=======
-  .Div2 {
-    display: inline-block;
-    display: flex;
-    width: 100%;
-    height: 40px;
-    margin-top:1.3%;
-    flex-direction: row;
-  
-  }
-
-          .Tag {
-            
-            width: 66%;
-            height: 100%;
-            background-color: white;
-            border: solid 0.5px rgba(151, 151, 151, 0.2);
-          
-          }
-          .Search
-        {
-            width:32%;
-            height: 100%;
-            margin-left:2%;
-          
-              
-        }
-
-  .Div3 {
-    width: 100%;
-    height: 100%;
-    margin-top: 1.3%;
-    display: grid;
-    grid-column-gap: 2%;
-    grid-row-gap: 20px;
-    grid-template-columns: 32% 32% 32%;
-    
-  }
-
-
-
-@media (min-width: 481px) and (max-width: 767px) {
->>>>>>> 29f9dcc7820d62896e1e0a27d8f89248002acb2b
   
   .Div1 {
     height: 100px;
@@ -100,31 +56,10 @@
           font-size: 14px;
           width: 90%;
         }
-<<<<<<< HEAD
 }
 
 @media (max-width: 480px) 
 {
-=======
-
-  .Div2 {
-    height: 32px;
-  }
-  .Div3{
-    margin-top: 2%;
-    display: grid;
-    grid-column-gap: 2%;
-    grid-row-gap: 3%;
-    grid-template-columns: 49% 49%;
-  }
- 
-  
-}
-
-
-
-@media (max-width: 480px) {
->>>>>>> 29f9dcc7820d62896e1e0a27d8f89248002acb2b
   
   .Div1 {
     height: 100px;
@@ -139,38 +74,5 @@
           width: 90%;
         }
 
-<<<<<<< HEAD
-=======
-  .Div2 {
-    height: 70px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: 2%;
-  }
-        .Tag {
-          height: 50%;
-          width: 100%;
-          background-color: white;
-        
-        }
-        .Search
-        {
-          height: 50%;
-          width: 100%;
-          background-color: blue; 
-          margin-top: 2%; 
-          margin-left:0%;
-        }
-
-  .Div3{
-    margin-top: 5%;
-    display: grid;
-    grid-column-gap: 2%;
-    grid-row-gap: 1%;
-    grid-template-columns: 100%;
-  }
-
-  
->>>>>>> 29f9dcc7820d62896e1e0a27d8f89248002acb2b
 }
 @import url('https://fonts.googleapis.com/css?family=Muli:400'); 
