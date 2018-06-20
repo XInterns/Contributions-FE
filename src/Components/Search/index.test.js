@@ -5,18 +5,18 @@ import Search from './index'
 // const Rectangle=require('./index.js')
 Enzyme.configure({ adapter: new Adapter() });
 describe(' Check If the Class contains all the elements',()=>{
-    it('Check if it contains Div2',()=>{
+    it('Check if it contains taskbar',()=>{
         const wrapper = shallow(<Search/>);
-        expect(wrapper.find('.Div2').exists()).toEqual(true);
+        expect(wrapper.find('.taskbar').exists()).toEqual(true);
     });
 
-    it('Check if it contains a Tag Div',()=>{
+    it('Check if it contains a tag Div',()=>{
         const wrapper = shallow(<Search/>);
-        expect(wrapper.find('.Tag').exists()).toEqual(true);
+        expect(wrapper.find('.tag').exists()).toEqual(true);
     });
-    it('Check if it contains a Search Div',()=>{
+    it('Check if it contains a search Div',()=>{
         const wrapper = shallow(<Search/>);
-        expect(wrapper.find('.Search').exists()).toEqual(true);
+        expect(wrapper.find('.search').exists()).toEqual(true);
     });
 
     it('Check if it contains a search button',()=>{
