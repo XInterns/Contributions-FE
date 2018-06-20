@@ -16,9 +16,9 @@ class Rectangle extends Component
         page_query:''
       }
       this.onGoClick = this.onGoClick.bind(this);
-      this.Go = this.Go.bind(this);
+      this.GoToPage = this.GoToPage.bind(this);
     }
-    Go(id)
+    GoToPage(id)
     {
       this.setState({
         currentPage:id,
@@ -82,8 +82,8 @@ class Rectangle extends Component
             {this.state.isLoading === true ? <div className="Loading"></div> : <div />}
           </div> 
           <Page total={Math.ceil(parseInt(this.state.total)/(10))}  
-          curr={this.state.currentPage}
-          Go={this.Go}
+          currentPage={this.state.currentPage}
+          GoToPage={this.GoToPage}
           />
           
         </div>

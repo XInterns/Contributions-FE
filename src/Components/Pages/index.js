@@ -6,18 +6,19 @@ export default class Page extends Component{
      super(props)
      this.state={
         limit:this.props.total,   
-        curr:this.props.curr     
+        currentPage:this.props.currentPage,  
      }
      this.createButton = this.createButton.bind(this);
      this.changeVal=this.changeVal.bind(this);
  } 
+
  changeVal(event)
  {
-    this.props.Go(event.target.value);
+    this.props.GoToPage(event.target.value);
  }
  createButton(start)
  {
-     if(this.props.curr==start)
+     if(this.props.currentPage==start)
      return(
         <button className="active" onClick={this.changeVal} value={start}>{start}</button>
          );
@@ -28,12 +29,14 @@ export default class Page extends Component{
  }
  render (){
      var i;
-     var limit=this.props.total<5?this.props.total:5;
-      var buttons=[];
-     var start=this.props.curr<4?1:((this.props.total-this.props.curr)<3?(this.props.total)-4:(this.props.curr-2));
-     buttons.push(<button onClick={this.changeVal} value={1}>&laquo;</button>)
+     //This will set the limit of page buttons to 5 , if number of pages are more than 5.
+    var limit=this.props.total<5?this.props.total:5;
+    var buttons=[];
     
-     for(i=0;i<limit;i++)
+    //This will calculate the starting button from where the rendering of page buttons should start
+    var start=this.props.currentPage<4?1:((this.props.total-this.props.currentPage)<3?(this.props.total)-4:(this.props.currentPage-2));
+    buttons.push(<button onClick={this.changeVal} value={1}>&laquo;</button>)
+    for(i=0;i<limit;i++)
     {
         buttons.push(this.createButton(start));
         start++;
