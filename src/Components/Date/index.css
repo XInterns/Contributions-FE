@@ -1,10 +1,8 @@
 .date{
-    position: relative;
-    margin-top:-4%;
-    margin-left: 75%;
+   
     opacity: 0.5; 
     font-size: 12px;
-    line-height: 1.85;
+    line-height: 9px;
     letter-spacing: 0.3px;
     color: #4a4a4a;
     font-family: 'Muli', sans-serif;

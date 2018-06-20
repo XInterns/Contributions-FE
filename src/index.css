@@ -1,4 +1,4 @@
-.body 
+.body:hover
 {
     margin:auto;
 }
@@ -13,7 +13,7 @@
   }
   .Div1 {
     width: 100%;
-    height: 17vh;
+    height: 100px;
     background-image: url("background.jpg");    
   }
 
@@ -34,122 +34,45 @@
         }
 
         .Coming-together-is-a{
-          width: 100%;
+          width: 90%;
           color: #ffffff;
           margin-left:3.14%;
-          margin-top:6px; 
-          font-size: 19px;
-          /* font-weight: 600; */
+          margin-top:10px; 
+          font-size: 16px;
           font-family: 'Muli', sans-serif;
         }
 
-  .Div2 {
-    display: inline-block;
-    display: flex;
-    width: 100%;
-    height: 6vh;
-    margin-top:1.3%;
-    flex-direction: row;
-  
-  }
-
-  .Tag {
-    
-    width: 66%;
-    height: 100%;
-    background-color: white;
-    border: solid 0.5px rgba(151, 151, 151, 0.2);
-  
-  }
-  .Search
+@media (min-width: 481px) and (max-width: 767px) 
 {
-    width:32%;
-    height: 100%;
-    margin-left:2%;
   
-       
-}
-
-  .Div3 {
-    
-    width: 100%;
-    height: 100%;
-    margin-top: 1.3%;
-    display: grid;
-    grid-column-gap: 2%;
-    grid-row-gap:20px;
-    grid-template-columns: 32% 32% 32%;
-    
-  }
-
-@media (min-width: 550px) and (max-width: 767px) {
   .Div1 {
-    height: 14vh;
+    height: 100px;
   }
         .Wall-of-Contribution{
           font-size: 25px;
         }
 
         .Coming-together-is-a{
-          font-size: 12px;
+          font-size: 14px;
+          width: 90%;
         }
-
-  .Div2 {
-    height: 4vh;
-  }
-  .Div3{
-    display: grid;
-    grid-column-gap: 2%;
-    grid-row-gap: 3%;
-    grid-template-columns: 49% 49%;
-  }
- 
-
-  
-  
 }
-@media (max-width: 550px) 
+
+@media (max-width: 480px) 
 {
+  
   .Div1 {
     height: 100px;
   } 
 
         .Wall-of-Contribution{
-          font-size: 19px;
+          font-size: 18px;
         }
 
         .Coming-together-is-a{
           font-size: 11px;
+          width: 90%;
         }
 
-  .Div2 {
-    height: 50px;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-        .Tag {
-          height: 50%;
-          width: 100%;
-          background-color: pink;
-        
-        }
-        .Search
-        {
-          height: 50%;
-          width: 100%;
-          background-color: blue; 
-          margin-top: 1.3%; 
-          margin-left:0%;
-        }
-
-  .Div3{
-    display: grid;
-    grid-column-gap: 2%;
-    grid-row-gap: 3%;
-    grid-template-columns: 100%;
-  }
-  
- 
-  
 }
 @import url('https://fonts.googleapis.com/css?family=Muli:400'); 
