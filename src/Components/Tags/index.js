@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import './index.css'
-import Set_tags from '../Set Tags/'
+import SetTags from '../Set Tags/'
 
 
 export default class Tags extends Component
 {
   render(){
     return(
-      <div className="Tags">
+      <div className="tagging">
        
-        <Set_tags Tag={(this.props.it).name} TagR={this.props.TagsRequest}/>
+        <SetTags Tag={(this.props.it).name} TagR={this.props.TagsRequest}/>
 
       </div>
 

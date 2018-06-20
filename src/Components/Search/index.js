@@ -78,40 +78,40 @@ SeeAll()
         }
       )
   }
-  renderTag(item) {
+  renderTag(item,i) {
     return (
      
-      <Tags it={item} TagsRequest={this.TagsReq}/>
+      <Tags it={item} key={i} TagsRequest={this.TagsReq}/>
       
   )
   }
   render() {
     return (
-      <div className="Div2">
-        <div className="Tag">
+      <div className="taskbar">
+        <div className="tag">      
           {
-            this.state.items.slice(0,4).map(item => (
-              this.renderTag(item)
+            this.state.items.slice(0,4).map((item,i) => (
+              this.renderTag(item,i)
             ))
           }
           <div className = "dropdown">
-            <a href="javascript:void(0);" className="dropdown-toggle" data-toggle="dropdown" > Tags 
+            <span className="dropdown-toggle" data-toggle="dropdown" > Tags 
                                                                                      
-            <span className = "caret"> </span> </a>
+            <span className = "caret"> </span> </span>
             <ul className = "dropdown-menu scrollable-menu pull-right">
-            <li><a href="javascript:void(0);" id="Tags">
+            <li><span id="Tags">
             {
-            this.state.items.map(item => (
-              this.renderTag(item)
+            this.state.items.map((item,i) => (
+              this.renderTag(item,i)
             ))
-          }</a></li>
+          }</span></li>
             </ul>
-            
+      
           </div>
-          <div><a href="javascript:void(0);" onClick={this.SeeAll}> See All</a></div>
+          <div><span className="home" onClick={this.SeeAll}> See All</span></div>
         </div>
-        <div className="Search">
-          <input className="Searchbox" type="text" value={this.state.value} placeholder="Search Here" onChange={this.onValChange} ></input>
+        <div className="search">
+          <input className="searchbox" type="text" value={this.state.value} placeholder="Search Here" onChange={this.onValChange} ></input>
           <button type="submit" className="button" onClick={this.onButtonClick}><span className="go">Go</span></button>
         </div>
       </div>

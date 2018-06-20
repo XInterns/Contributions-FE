@@ -19,7 +19,7 @@ export default class Picture extends Component {
 
   render() {
     return (
-      <div className="pic">
+      <div className="picture">
         {this.Seperate()}
     </div>
 

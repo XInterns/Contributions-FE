@@ -1,11 +1,16 @@
 import React  from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Rectangle from './Components/Rectangle/';
+import Body from './Components/Body/';
+import Header from './Components/Header/';
+
 class Index extends React.Component {
     render() {
         return (
-            <Rectangle />
+            <div className="window">
+                <Header />
+                <Body />
+            </div>
         );
     }
 }
