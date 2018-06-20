@@ -29,7 +29,7 @@ class Rectangle extends Component
     }
     componentDidMount()
     {
-      fetch(`https://swapi.co/api/people/`)
+      fetch(`http://192.168.2.128:5000/`)
         .then((response) => response.json())
         .then(
           parsedJson => {
@@ -48,7 +48,7 @@ class Rectangle extends Component
         )
     }
     componentDid(id) {
-      fetch(`https://swapi.co/api/people/?search=${id}`)
+      fetch(`http://192.168.2.128:5000/search?queryparam=${id}`)
         .then((response) => response.json())
         .then(
           parsedJson => {

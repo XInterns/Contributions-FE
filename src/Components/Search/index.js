@@ -97,11 +97,11 @@ SeeAll()
             ))
           }
           <div className = "dropdown">
-            <a href="#" className="dropdown-toggle" data-toggle="dropdown" > Tags 
+            <a href="javascript:void(0);" className="dropdown-toggle" data-toggle="dropdown" > Tags 
                                                                                      
             <span className = "caret"> </span> </a>
             <ul className = "dropdown-menu scrollable-menu pull-right">
-            <li><a href="#" id="Tags">
+            <li><a href="javascript:void(0);" id="Tags">
             {
             this.state.items.map(item => (
               this.renderTag(item)
@@ -110,7 +110,7 @@ SeeAll()
             </ul>
             
           </div>
-          <div><a href="#" onClick={this.SeeAll}> See All</a></div>
+          <div><a href="javascript:void(0);" onClick={this.SeeAll}> See All</a></div>
         </div>
         <div className="Search">
           <input className="Searchbox" type="text" value={this.state.value} placeholder="Search Here" onChange={this.onValChange} ></input>

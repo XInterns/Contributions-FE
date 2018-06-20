@@ -16,7 +16,7 @@ export default class Set_tags extends Component
     render(){
       return(
         <div className="Tag_Element">
-         <a href="#" onClick={this.click}> {this.props.Tag}</a>
+         <a href="javascript:void(0);" onClick={this.click}> {this.props.Tag}</a>
         </div>
       )
     }
