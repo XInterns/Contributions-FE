@@ -47,7 +47,7 @@ class Search extends Component {
         <div className="Tag">
         </div>
         <div className="Search">
-          <input className="Searchbox" type="text" value={this.state.value} placeholder="Search Here" onChange={this.onValChange} ></input>
+          <input className="Searchbox" id="SearchBox" type="text" value={this.state.value} placeholder="Search Here" onChange={this.onValChange} ></input>
           <button type="submit" className="button" onClick={this.onButtonClick}><span className="go">Go</span></button>
         </div>
       </div>

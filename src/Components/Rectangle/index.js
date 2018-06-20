@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Search from '../Search/';
 import './index.css'
 import Box from '../Box/';
-
+import Page from '../Pages';
 class Rectangle extends Component
   {
     constructor(props) {
@@ -10,63 +10,64 @@ class Rectangle extends Component
       this.state = {
         items: [],
         isLoading: false,
+        query:'',
+        total:0,
+        currentPage:1,
+        page_query:'',
+        baseURL:'https://swapi.co/api/people/?search=',
       }
-      this.onValChange = this.onValChange.bind(this);
       this.onGoClick = this.onGoClick.bind(this);
+      this.GoToPage = this.GoToPage.bind(this);
+      this.fetchResults=this.fetchResults.bind(this);
     }
-
-    onValChange(id)
+    
+  
+    GoToPage(id)
     {
-      this.componentDid(id);
       this.setState({
-        isLoading : true
-       });
-    } 
+        currentPage:id,
+        page_query:'&page='+id,
+        isLoading:true,
+      });
+      this.fetchResults(`&page=${id}`);
+    }
+    fetchResults(pa)
+    {
+      if(pa===undefined)
+        pa=''
+      fetch(`${this.state.baseURL}${this.state.query}${pa}`)
+
+       .then((response) => response.json())
+        .then(
+          parsedJson => {
+            this.setState({
+              items: parsedJson.results,
+              isLoading: false,
+              total:parseInt(parsedJson.count),
+             
+            });
+          })
+        .catch(
+          (error) => {
+            this.setState({
+              error,
+              isLoading: false
+            });
+          }
+        )
+    }
     onGoClick(id)
     {
-     this.componentDid(id);
      this.setState({
+      query:id,
+      currentPage:1,
       isLoading : true,
       });
+      this.fetchResults();
     }
     componentDidMount()
     {
-      fetch(`https://swapi.co/api/people/?search=r2`)
-        .then((response) => response.json())
-        .then(
-          parsedJson => {
-            this.setState({
-              items: parsedJson.results,
-              isLoading: false,
-            });
-          })
-        .catch(
-          (error) => {
-            this.setState({
-              error,
-              isLoading: false
-            });
-          }
-        )
-    }
-    componentDid(id) {
-      fetch(`https://swapi.co/api/people/?search=${id}`)
-        .then((response) => response.json())
-        .then(
-          parsedJson => {
-            this.setState({
-              items: parsedJson.results,
-              isLoading: false,
-            });
-          })
-        .catch(
-          (error) => {
-            this.setState({
-              error,
-              isLoading: false
-            });
-          }
-        )
+      this.fetchResults(); 
     }
 
     renderBox(item) {
@@ -75,14 +76,9 @@ class Rectangle extends Component
     render() {
 
       return (
-        <div className="Rectangle-3">
-          <div className="Div1" >
-            <div className="Wall-of-Contribution" >WALL OF CONTRIBUTION</div>
-            <div className="Coming-together-is-a">Coming together is a beginning. Keeping together is progress. Working together is success.</div>
-          </div>
 
-          <Search onValueChange={this.onValChange} onGoClick={this.onGoClick} />
-
+        <div>
+          <Search onValueChange={this.onGoClick} onGoClick={this.onGoClick} />
           <div className="Div3">
             {
               this.state.items.map(item => (
@@ -90,7 +86,12 @@ class Rectangle extends Component
               ))
             }
             {this.state.isLoading === true ? <div className="Loading"></div> : <div />}
-          </div>
+
+          </div> 
+          <Page total={Math.ceil(parseInt(this.state.total)/(10))}  
+          currentPage={this.state.currentPage}
+          GoToPage={this.GoToPage}
+          />
           
         </div>
       )
