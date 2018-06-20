@@ -1,4 +1,4 @@
-.body 
+.body:hover
 {
     margin:auto;
 }
@@ -42,6 +42,10 @@
           font-family: 'Muli', sans-serif;
         }
 
+<<<<<<< HEAD
+@media (min-width: 481px) and (max-width: 767px) 
+{
+=======
   .Div2 {
     display: inline-block;
     display: flex;
@@ -83,6 +87,7 @@
 
 
 @media (min-width: 481px) and (max-width: 767px) {
+>>>>>>> 29f9dcc7820d62896e1e0a27d8f89248002acb2b
   
   .Div1 {
     height: 100px;
@@ -95,6 +100,12 @@
           font-size: 14px;
           width: 90%;
         }
+<<<<<<< HEAD
+}
+
+@media (max-width: 480px) 
+{
+=======
 
   .Div2 {
     height: 32px;
@@ -113,6 +124,7 @@
 
 
 @media (max-width: 480px) {
+>>>>>>> 29f9dcc7820d62896e1e0a27d8f89248002acb2b
   
   .Div1 {
     height: 100px;
@@ -127,6 +139,8 @@
           width: 90%;
         }
 
+<<<<<<< HEAD
+=======
   .Div2 {
     height: 70px;
     flex-direction: row;
@@ -157,5 +171,6 @@
   }
 
   
+>>>>>>> 29f9dcc7820d62896e1e0a27d8f89248002acb2b
 }
 @import url('https://fonts.googleapis.com/css?family=Muli:400'); 
