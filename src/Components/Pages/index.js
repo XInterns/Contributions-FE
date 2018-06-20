@@ -28,6 +28,7 @@ export default class Page extends Component{
      );
  }
  render (){
+     console.log('\nTotal page numbers are '+this.props.total)
      var i;
      //This will set the limit of page buttons to 5 , if number of pages are more than 5.
     var limit=this.props.total<5?this.props.total:5;

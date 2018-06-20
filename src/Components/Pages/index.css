@@ -1,7 +1,7 @@
 .pagination {
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
+  
+    display:flex;
+    justify-content: center;
 }
 
 .pagination button {
