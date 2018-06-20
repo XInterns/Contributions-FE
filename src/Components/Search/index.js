@@ -54,13 +54,12 @@ class Search extends Component {
 
 SeeAll()
 {
-  console.log("bo");
   this.props.SeeAll();
 }
 
   componentDidMount()
   {
-    fetch(`https://swapi.co/api/planets/`)
+    fetch(`https://swapi.co/api/people/`)
       .then((response) => response.json())
       .then(
         parsedJson => {
@@ -76,7 +75,6 @@ SeeAll()
             error,
             isLoading: false
           });
-          console.log("jo")
         }
       )
   }

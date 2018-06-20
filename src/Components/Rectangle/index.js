@@ -17,7 +17,6 @@ class Rectangle extends Component
 
     onSee()
     {
-      console.log("hi");
       this.componentDidMount();
     }
     onGoClick(id)
@@ -29,7 +28,7 @@ class Rectangle extends Component
     }
     componentDidMount()
     {
-      fetch(`http://192.168.2.128:5000/`)
+      fetch(`https://swapi.co/api/people/`)
         .then((response) => response.json())
         .then(
           parsedJson => {
@@ -48,7 +47,7 @@ class Rectangle extends Component
         )
     }
     componentDid(id) {
-      fetch(`http://192.168.2.128:5000/search?queryparam=${id}`)
+      fetch(`https://swapi.co/api/people/?search=${id}`)
         .then((response) => response.json())
         .then(
           parsedJson => {
