@@ -1,0 +1,4 @@
+{
+    "baseurl" :"https://swapi.co/api/people/?search=",
+    "port": " "
+}

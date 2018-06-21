@@ -4,8 +4,8 @@ import Name from '../Name';
 import Picture from '../Picture';
 import Date from '../Date';
 import Contribution from '../Contribution';
-export default class Box extends Component {
 
+export default class Box extends Component {
 
   clickEvent()
   {

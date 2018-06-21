@@ -3,6 +3,7 @@ import Search from '../Search/';
 import './index.css'
 import Box from '../Box/';
 import Page from '../Pages';
+import Config from '../../config.json';
 
 export default class Body extends Component
   {
@@ -15,7 +16,6 @@ export default class Body extends Component
         total:0,
         currentPage:1,
         page_query:'',
-        baseURL:'https://swapi.co/api/people/?search=',
       }
       this.onGoClick = this.onGoClick.bind(this);
       this.GoToPage = this.GoToPage.bind(this);
@@ -57,7 +57,7 @@ export default class Body extends Component
     fetchTags(id)
     {
       
-      fetch(`${this.state.baseURL}${id}`)
+      fetch(`${Config.baseurl}${id}`)
 
        .then((response) => response.json())
         .then(
@@ -81,7 +81,7 @@ export default class Body extends Component
     fetchSeeall()
     {
       
-      fetch(`${this.state.baseURL}`)
+      fetch(`${Config.baseurl}`)
 
        .then((response) => response.json())
         .then(
@@ -106,7 +106,7 @@ export default class Body extends Component
     {
       if(pa===undefined)
         pa=''
-      fetch(`${this.state.baseURL}${this.state.query}${pa}`)
+      fetch(`${Config.baseurl}${this.state.query}${pa}`)
 
        .then((response) => response.json())
         .then(

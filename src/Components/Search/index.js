@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.css'
-
 import Tags from '../Tags/'
+import Config from '../../config.json';
 
 function debounce(fn, delay) {
   var timer = null;
@@ -15,7 +15,7 @@ function debounce(fn, delay) {
 }
 
 
-class Search extends Component {
+export default class Search extends Component {
   constructor(props)
   {
     super(props)
@@ -59,7 +59,7 @@ SeeAll()
 
   componentDidMount()
   {
-    fetch(`https://swapi.co/api/people/`)
+    fetch(`${Config.baseurl}`)
       .then((response) => response.json())
       .then(
         parsedJson => {
@@ -119,4 +119,4 @@ SeeAll()
   }
 }
 
-export default Search;
+
