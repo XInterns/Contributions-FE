@@ -43,11 +43,11 @@ class Search extends Component {
 
   render() {
     return (
-      <div className="Div2">
-        <div className="Tag">
+      <div className="taskbar">
+        <div className="tag">
         </div>
-        <div className="Search">
-          <input className="Searchbox" type="text" value={this.state.value} placeholder="Search Here" onChange={this.onValChange} ></input>
+        <div className="search">
+          <input className="searchbox" type="text" value={this.state.value} placeholder="Search Here" onChange={this.onValChange} ></input>
           <button type="submit" className="button" onClick={this.onButtonClick}><span className="go">Go</span></button>
         </div>
       </div>

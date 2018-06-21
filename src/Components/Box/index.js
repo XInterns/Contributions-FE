@@ -7,25 +7,29 @@ import Contribution from '../Contribution';
 
 export default class Box extends Component {
 
+
+  clickEvent()
+  {
+    }
     render() {
       return (
-        <div className="Rectangle-2" onClick="return true">
+        <div className="details" onClick={this.clickEvent}>
          
           <div className="row1">
 
               <div className="col1">
-                  <Picture pic={(this.props.it).contributor_name} />
-                  <Name name={(this.props.it).contributor_name} />
+                  <Picture pic={this.props.it.contributor_name} />
+                  <Name name={this.props.it.contributor_name} />
               </div>
           
               <div className="col2">
-                  <Date date={(this.props.it).creation_date} />
+                  <Date date={this.props.it.creation_date} />
           
               </div>
           </div>
          
           <div className="row2">
-          <Contribution content={(this.props.it).mesage} />
+          <Contribution content={this.props.it.mesage} />
           </div>
         
         </div>

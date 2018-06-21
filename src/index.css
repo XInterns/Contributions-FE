@@ -1,8 +1,9 @@
 .body:hover
 {
     margin:auto;
+    font-family: 'Muli', sans-serif;
 }
-.Rectangle-3 {
+.window {
 
     width: 87.5%;
     display: flex;
@@ -11,7 +12,7 @@
     margin-right:6.25%;
     
   }
-  .Div1 {
+  .header {
     width: 100%;
     height: 100px;
     background-image: url("background.jpg");    
@@ -30,7 +31,7 @@
           font-weight: 900;
           letter-spacing: 1px;
           text-shadow: 0 1px 0 #000000;
-          font-family: 'Muli', sans-serif;
+         
         }
 
         .Coming-together-is-a{
@@ -39,13 +40,13 @@
           margin-left:3.14%;
           margin-top:10px; 
           font-size: 16px;
-          font-family: 'Muli', sans-serif;
+
         }
 
 @media (min-width: 481px) and (max-width: 767px) 
 {
   
-  .Div1 {
+  .header {
     height: 100px;
   }
         .Wall-of-Contribution{
@@ -61,7 +62,7 @@
 @media (max-width: 480px) 
 {
   
-  .Div1 {
+  .header {
     height: 100px;
   } 
 

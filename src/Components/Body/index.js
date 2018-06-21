@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import Search from '../Search/';
 import './index.css'
 import Box from '../Box/';
+import Config from '../../config.json'
 
-class Rectangle extends Component
+class Body extends Component
   {
     constructor(props) {
       super(props)
@@ -31,7 +32,7 @@ class Rectangle extends Component
     }
     componentDidMount()
     {
-      fetch(`http://192.168.2.128:5000/`)
+      fetch(Config.Url+ Config.Port)
         .then((response) => response.json())
         .then(
           parsedJson => {
@@ -50,7 +51,7 @@ class Rectangle extends Component
         )
     }
     componentDid(id) {
-      fetch(`http://192.168.2.128:5000/search?queryparam=${id}`)
+      fetch(Config.Url+ Config.Port+`search?queryparam=${id}`)
         .then((response) => response.json())
         .then(
           parsedJson => {
@@ -77,17 +78,17 @@ class Rectangle extends Component
       return (
         <div>
           <Search onValueChange={this.onValChange} onGoClick={this.onGoClick} />
-          <div className="Div3">
+          <div className="body">
             {
               this.state.items.map(item => (
                 this.renderBox(item)
               ))
             }
-            {this.state.isLoading === true ? <div className="Loading"></div> : <div />}
+            {this.state.isLoading === true ? <div className="loading"></div> : <div />}
           </div>
 
         </div>
       )
     }
   }
-export default Rectangle;
+export default Body;
