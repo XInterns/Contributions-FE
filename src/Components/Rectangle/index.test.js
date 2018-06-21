@@ -9,10 +9,7 @@ describe('testing test component',()=>{
         const wrapper = shallow(<Rectangle/>);
         expect(wrapper.find('div.Div3')).toHaveLength(1);
     });
-    it('Check if Contain Div1 ',()=>{
-        const wrapper = shallow(<Rectangle/>);
-        expect(wrapper.find('div.Div1')).toHaveLength(1);
-    });
+    
     it('Check if Contain Search ',()=>{
         const wrapper = shallow(<Rectangle/>);
         expect(wrapper.find('Search')).toHaveLength(1);

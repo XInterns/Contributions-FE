@@ -20,6 +20,8 @@ class Rectangle extends Component
       this.GoToPage = this.GoToPage.bind(this);
       this.fetchResults=this.fetchResults.bind(this);
     }
+    
+  
     GoToPage(id)
     {
       this.setState({
@@ -63,7 +65,7 @@ class Rectangle extends Component
       });
       this.fetchResults();
     }
-    componentDidMount(pa)
+    componentDidMount()
     {
       this.fetchResults(); 
     }

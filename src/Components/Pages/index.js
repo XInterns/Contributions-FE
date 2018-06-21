@@ -14,6 +14,7 @@ export default class Page extends Component{
 
  changeVal(event)
  {
+     console.log('ee'+event.target.value)
     this.props.GoToPage(event.target.value);
  }
  createButton(start)
@@ -27,11 +28,16 @@ export default class Page extends Component{
     <button className="inactive" onClick={this.changeVal} value={start}>{start}</button>
      );
  }
+ returnLimit(total)
+ {
+     return this.props.total<5?this.props.total:5;
+ }
  render (){
      console.log('\nTotal page numbers are '+this.props.total)
      var i;
      //This will set the limit of page buttons to 5 , if number of pages are more than 5.
-    var limit=this.props.total<5?this.props.total:5;
+   
+    var limit= this.returnLimit(this.props.total);
     var buttons=[];
     
     //This will calculate the starting button from where the rendering of page buttons should start

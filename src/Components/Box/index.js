@@ -5,11 +5,11 @@ import Picture from '../Picture';
 import Date from '../Date';
 import Contribution from '../Contribution';
 
-export default class Box extends Component {
+class Box extends Component {
 
     render() {
       return (
-        <div className="Rectangle-2">
+        <div className="Rectangle">
          
           <div className="row1">
 
@@ -33,3 +33,4 @@ export default class Box extends Component {
       )
     }
   }
+  export default Box;
