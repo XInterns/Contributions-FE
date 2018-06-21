@@ -1,8 +1,7 @@
 .contribution{
+    margin-top:8px;
     display: block;
-    margin-top:5%;
-    margin-left: 20%;
-    width: 80%;
+    width: 90%;
     height: 24px;
     font-size: 12px;
     line-height: 1.5;
@@ -13,11 +12,6 @@
     color: #797979;
     left: 10.3px;
     font-family: 'Muli', sans-serif;
+    word-wrap: break-word;
   }
   
-  @media (min-width: 550px) and (max-width: 767px){
-
-  .contribution{
-    width:80%;
-  }
-  }
