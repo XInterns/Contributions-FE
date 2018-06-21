@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import Search from '../Search/';
 import './index.css'
 import Box from '../Box/';
+import Config from '../../config.json'
 
-class Rectangle extends Component
+class Body extends Component
   {
     constructor(props) {
       super(props)
@@ -31,7 +32,7 @@ class Rectangle extends Component
     }
     componentDidMount()
     {
-      fetch(`https://swapi.co/api/people/?search=r2`)
+      fetch(Config.Url+ Config.Port)
         .then((response) => response.json())
         .then(
           parsedJson => {
@@ -50,7 +51,7 @@ class Rectangle extends Component
         )
     }
     componentDid(id) {
-      fetch(`https://swapi.co/api/people/?search=${id}`)
+      fetch(Config.Url+ Config.Port+`search?queryparam=${id}`)
         .then((response) => response.json())
         .then(
           parsedJson => {
@@ -75,25 +76,20 @@ class Rectangle extends Component
     render() {
 
       return (
-        <div className="Rectangle-3">
-          <div className="Div1" >
-            <div className="Wall-of-Contribution" >WALL OF CONTRIBUTION</div>
-            <div className="Coming-together-is-a">Coming together is a beginning. Keeping together is progress. Working together is success.</div>
-          </div>
-
+        <div>
           <Search onValueChange={this.onValChange} onGoClick={this.onGoClick} />
+          <div className="body">
 
-          <div className="Div3">
             {
               this.state.items.map(item => (
                 this.renderBox(item)
               ))
             }
-            {this.state.isLoading === true ? <div className="Loading"></div> : <div />}
+            {this.state.isLoading === true ? <div className="loading"></div> : <div />}
           </div>
-          
+
         </div>
       )
     }
   }
-export default Rectangle;
+export default Body;

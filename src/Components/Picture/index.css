@@ -1,6 +1,5 @@
-.pic{
-    margin-top:5%;
-    margin-left:5%;
+.picture{
+    
     width: 45px;
     height: 45px;
     border-radius: 50%;
@@ -11,6 +10,5 @@
     font-size: 14px;
     font-weight: 900;
     color: blue;
-    font-family: 'Muli', sans-serif;
   }
   
