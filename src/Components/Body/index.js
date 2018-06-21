@@ -79,6 +79,7 @@ class Body extends Component
         <div>
           <Search onValueChange={this.onValChange} onGoClick={this.onGoClick} />
           <div className="body">
+
             {
               this.state.items.map(item => (
                 this.renderBox(item)
