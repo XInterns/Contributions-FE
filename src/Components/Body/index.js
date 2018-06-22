@@ -149,10 +149,13 @@ export default class Body extends Component
             {this.state.isLoading === true ? <div className="loading"></div> : <div />}
 
           </div> 
+
+          {Math.ceil(parseInt(this.state.total,10)/(10))===0 && this.state.isLoading === false ?<div className="Not_Found"><b>Sorry! No Records Found</b></div>:
           <Page total={Math.ceil(parseInt(this.state.total,10)/(10))}  
           currentPage={this.state.currentPage}
           GoToPage={this.GoToPage}
-          />
+          />}
+          
           
         </div>
       )

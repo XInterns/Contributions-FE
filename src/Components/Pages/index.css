@@ -14,9 +14,9 @@
 }
 
 .pagination button.active {
-    background-color: #4CAF50;
+    background-color: blue;
     color: white;
-    border: 1px solid #4CAF50;
+    border: 1px solid blue;
 }
 
 .pagination button:hover:not(.active) {background-color: #ddd;}

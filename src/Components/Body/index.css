@@ -30,6 +30,13 @@
     -webkit-animation: lds-dual-ring 1.1s infinite;
     animation: lds-dual-ring 1.1s infinite;
   }
+
+  .Not_Found{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    color: grey;
+  }
   
   @-webkit-keyframes lds-dual-ring
   {
