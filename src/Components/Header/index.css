@@ -1,0 +1,71 @@
+.heading
+  {
+    width: 100%;
+    height: 100px;
+    background-image: url("background.jpg");    
+  }
+
+        .Wall-of-Contribution
+        {
+          display: flex;
+          justify-content: flex-start;
+          height: 25%;
+          width: 100%;
+          margin-left:3.14%;
+          margin-top:20px;
+          color: white;
+          font-size: 30px;
+          font-weight: 900;
+          letter-spacing: 1px;
+          text-shadow: 0 1px 0 #000000;
+        }
+
+        .Coming-together-is-a
+        {
+          width: 90%;
+          color: #ffffff;
+          margin-left:3.14%;
+          margin-top:10px; 
+          font-size: 16px;
+        }
+
+
+@media (min-width: 481px) and (max-width: 767px) 
+{
+
+.heading
+{
+    height: 100px;
+}
+    .Wall-of-Contribution
+    {
+        font-size: 25px;
+    }
+
+    .Coming-together-is-a
+    {
+        font-size: 14px;
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) 
+{
+
+.heading
+{
+    height: 100px;
+} 
+
+    .Wall-of-Contribution
+    {
+        font-size: 18px;
+    }
+
+    .Coming-together-is-a
+    {
+        font-size: 11px;
+        width: 90%;
+    }
+
+}
