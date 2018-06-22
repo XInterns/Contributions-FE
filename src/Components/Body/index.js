@@ -16,13 +16,14 @@ export default class Body extends Component
         total:0,
         currentPage:1,
         page_query:'',
+        RecInPage:1,
       }
       this.onGoClick = this.onGoClick.bind(this);
       this.GoToPage = this.GoToPage.bind(this);
       this.fetchResults=this.fetchResults.bind(this);
-      this.fetchSeeall=this.fetchSeeall.bind(this);
       this.fetchTags=this.fetchTags.bind(this);
       this.onSee=this.onSee.bind(this);
+      this.onSearch=this.onSearch.bind(this);
     }
 
     onSee()
@@ -31,8 +32,9 @@ export default class Body extends Component
       this.setState({
         isLoading:true,
         currentPage:1,
+        query:'',
       })
-      this.fetchSeeall();
+      this.fetchResults();
     }
     
     onGoClick(id)
@@ -44,20 +46,31 @@ export default class Body extends Component
     this.fetchTags(id); 
 
     }
+    onSearch(id)
+      {
+        this.setState({
+          query:id,
+          currentPage:1,
+          isLoading:true
+        })
+    this.fetchResults(id); 
+
+    }
+
 
     GoToPage(id)
     {
       this.setState({
         currentPage:id,
-        page_query:'&page='+id,
+        page_query: id,
         isLoading:true,
       });
-      this.fetchResults(`&page=${id}`);
+      this.fetchResults(this.state.query,`${id}`);
     }
     fetchTags(id)
     {
       
-      fetch(`${Config.baseurl}${id}`)
+      fetch(`${Config.tagsearch}${id}`)
 
        .then((response) => response.json())
         .then(
@@ -78,35 +91,13 @@ export default class Body extends Component
           }
         )
     }
-    fetchSeeall()
+    fetchResults(query,pa)
     {
-      
-      fetch(`${Config.baseurl}`)
-
-       .then((response) => response.json())
-        .then(
-          parsedJson => {
-            this.setState({
-              items: parsedJson.results,
-              isLoading: false,
-              total:parseInt(parsedJson.count,10),
-             
-            });
-          })
-        .catch(
-          (error) => {
-            this.setState({
-              error,
-              isLoading: false
-            });
-          }
-        )
-    }
-    fetchResults(pa)
-    {
+      if(query===undefined)
+      query=''
       if(pa===undefined)
         pa=''
-      fetch(`${Config.baseurl}${this.state.query}${pa}`)
+      fetch(`${Config.baseurl}${query}&page=${pa}`)
 
        .then((response) => response.json())
         .then(
@@ -114,8 +105,8 @@ export default class Body extends Component
             this.setState({
               items: parsedJson.results,
               isLoading: false,
-              total:parseInt(parsedJson.count,10),
-             
+              total:parseInt(parsedJson.noOfRecords,10),
+              RecInPage:parseInt(parsedJson.size,10)
             });
           })
         .catch(
@@ -133,14 +124,15 @@ export default class Body extends Component
     }
 
     renderBox(item,i) {
-      return (<Box it={item} key={i} />);
+       return (<Box it={item} key={i} />);
+
     }
     render() {
 
       return (
 
         <div>
-          <Search onValueChange={this.onGoClick} onGoClick={this.onGoClick} SeeAll={this.onSee} />
+          <Search onValueChange={this.onSearch} onGoClick={this.onSearch} SeeAll={this.onSee} />
           <div className="contri_body">
             {this.state.items.map((item,i) => (
                 this.renderBox(item,i)
@@ -151,7 +143,7 @@ export default class Body extends Component
           </div> 
 
           {Math.ceil(parseInt(this.state.total,10)/(10))===0 && this.state.isLoading === false ?<div className="Not_Found"><b>Sorry! No Records Found</b></div>:
-          <Page total={Math.ceil(parseInt(this.state.total,10)/(10))}  
+          <Page total={Math.ceil(parseInt(this.state.total,10)/parseInt(this.state.RecInPage,10))}  
           currentPage={this.state.currentPage}
           GoToPage={this.GoToPage}
           />}

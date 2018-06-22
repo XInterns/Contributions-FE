@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './index.css';
-
 export default class Contribution extends Component {
     constructor(props){
       super(props);
+
       this.FindLink=this.FindLink.bind(this);
       this.checkLink=this.checkLink.bind(this);
     }
@@ -15,14 +15,34 @@ export default class Contribution extends Component {
     FindLink()
     {
       var contri=this.props.content;
-      var check_iflink=new RegExp("(https|http+://)?([a-zA-Z0-9_]+:[a-zA-Z0-9_]+@)?([a-zA-Z0-9.-]+\\.[A-Za-z]{2,4})(:[0-9]+)?(/.*)?");
-      
+      var check_iflink=new RegExp("(https|http)://[A-Za-z./0-9?#=:%\"_&'@$^*;()-]+",'gm');
+     
       if(this.checkLink(check_iflink,contri))
       {  
-      var link=contri.match(check_iflink)[0].split(" ");
-      var splitcontri=contri.split(link[0])
-      
-      return <div><b>Contribution:&nbsp;</b>{splitcontri[0]}<a href={link[0]}>{link[0]}</a>{splitcontri[1]}</div>;
+
+      var no_link =contri.match(check_iflink);
+      var finallink=[]
+      var last=contri; 
+      var temp='';    
+                                      
+      for(var i=0;i<no_link.length;i++)
+      {
+        temp=last.split(no_link[i]);
+        if(temp[0]!=null)
+        {
+          finallink.push(temp[0])
+          finallink.push(<a href={no_link[i]} key={i} >{no_link[i]}</a> );
+          if(temp[1]!=null)
+          {
+          last =temp[1];
+          }
+        }
+
+      }
+
+        
+        
+      return <div><b>Contribution:&nbsp;</b>{finallink}</div>;
       }
       else
       {

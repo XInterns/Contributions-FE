@@ -1,4 +1,6 @@
 {
-    "baseurl" :"https://swapi.co/api/people/?search=",
-    "port": " "
+    "baseurl" :"http://192.168.1.6:5000/search?queryparam=",
+    "tagurl": "http://192.168.1.6:5000/tag",
+    "tagsearch": "http://192.168.1.6:5000/taginfo?tag=",
+    "limit":5
 }

@@ -27,6 +27,7 @@ export default class Search extends Component {
     this.onButtonClick = this.onButtonClick.bind(this); 
     this.TagsReq=this.TagsReq.bind(this);
     this.SeeAll=this.SeeAll.bind(this);
+    this.fetchresults=this.fetchresults.bind(this);
    
   }
   
@@ -57,14 +58,14 @@ SeeAll()
   this.props.SeeAll();
 }
 
-  componentDidMount()
-  {
-    fetch(`${Config.baseurl}`)
+fetchresults()
+{
+    fetch(`${Config.tagurl}`)
       .then((response) => response.json())
       .then(
         parsedJson => {
           this.setState({
-            items: parsedJson.results,
+            items: parsedJson,
             isLoading: false,
           });
         })
@@ -77,7 +78,13 @@ SeeAll()
           });
         }
       )
+}
+
+  componentDidMount()
+  {
+    this.fetchresults();
   }
+  
   renderTag(item,i) {
     return (
      
