@@ -17,11 +17,11 @@ export default class Body extends Component
         currentPage:1,
         page_query:'',
         RecInPage:1,
+        type:'search',
       }
       this.onGoClick = this.onGoClick.bind(this);
       this.GoToPage = this.GoToPage.bind(this);
       this.fetchResults=this.fetchResults.bind(this);
-      this.fetchTags=this.fetchTags.bind(this);
       this.onSee=this.onSee.bind(this);
       this.onSearch=this.onSearch.bind(this);
     }
@@ -30,74 +30,61 @@ export default class Body extends Component
     {
 
       this.setState({
+        type:'search',
         isLoading:true,
         currentPage:1,
         query:'',
       })
-      this.fetchResults();
+      this.fetchResults('search');
     }
     
     onGoClick(id)
       {
         this.setState({
+          type:'tag',
           currentPage:1,
-          isLoading:true
+          isLoading:true,
+          query:id,
         })
-    this.fetchTags(id); 
+    this.fetchResults('tag',id); 
 
     }
     onSearch(id)
       {
         this.setState({
+          type:'search',
           query:id,
           currentPage:1,
           isLoading:true
         })
-    this.fetchResults(id); 
+    this.fetchResults('search',id); 
 
     }
 
 
-    GoToPage(id)
+    GoToPage(page)
     {
       this.setState({
-        currentPage:id,
-        page_query: id,
+        currentPage:page,
+        page_query: page,
         isLoading:true,
       });
-      this.fetchResults(this.state.query,`${id}`);
+      this.fetchResults(this.state.type,this.state.query,`${page}`);
     }
-    fetchTags(id)
-    {
-      
-      fetch(`${Config.tagsearch}${id}`)
-
-       .then((response) => response.json())
-        .then(
-          parsedJson => {
-            this.setState({
-              items: parsedJson.results,
-              isLoading: false,
-              total:parseInt(parsedJson.count,10),
-             
-            });
-          })
-        .catch(
-          (error) => {
-            this.setState({
-              error,
-              isLoading: false
-            });
-          }
-        )
-    }
-    fetchResults(query,pa)
+    fetchResults(type,query,pa)
     {
       if(query===undefined)
       query=''
       if(pa===undefined)
         pa=''
-      fetch(`${Config.baseurl}${query}&page=${pa}`)
+      var url='';
+      if(type==='search')
+        url=Config.baseurl;
+      else
+        if(type==='tag')
+          url=Config.tagsearch;
+
+      fetch(`${url}${query}&page=${pa}`)
 
        .then((response) => response.json())
         .then(
@@ -120,7 +107,7 @@ export default class Body extends Component
     }
     componentDidMount()
     {
-      this.fetchResults(); 
+      this.fetchResults('search'); 
     }
 
     renderBox(item,i) {
@@ -132,7 +119,7 @@ export default class Body extends Component
       return (
 
         <div>
-          <Search onValueChange={this.onSearch} onGoClick={this.onSearch} SeeAll={this.onSee} />
+          <Search onValueChange={this.onSearch} onTagClick={this.onGoClick} onGoClick={this.onSearch} SeeAll={this.onSee} />
           <div className="contri_body">
             {this.state.items.map((item,i) => (
                 this.renderBox(item,i)

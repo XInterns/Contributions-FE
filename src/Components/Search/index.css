@@ -34,6 +34,7 @@
   }
 
       .searchbox {
+        outline: none;
         width:85%;
         opacity: 0.8;
         background-image: url("icon.svg"); 

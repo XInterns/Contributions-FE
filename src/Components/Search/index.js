@@ -50,11 +50,17 @@ export default class Search extends Component {
   }
 
  TagsReq(val){
-  this.props.onGoClick(val);
+  this.setState({
+    value:""
+  })
+  this.props.onTagClick(val);
  }
 
 SeeAll()
 {
+  this.setState({
+    value:""
+  })
   this.props.SeeAll();
 }
 
