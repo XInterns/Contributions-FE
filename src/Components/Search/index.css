@@ -100,8 +100,7 @@
 }    
 .scrollable-menu::-webkit-scrollbar-thumb {
   border-radius: 2px;
-  background-color: #337ab7;
-  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.75);        
+  background-color: #337ab7;      
 }
 #Tags{
   background-color: #ffffff;
