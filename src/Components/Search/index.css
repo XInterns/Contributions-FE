@@ -91,7 +91,7 @@
 }
 .scrollable-menu {
   height: auto;
-  max-height: 400px;
+  max-height: 350px;
   overflow-x: hidden;
 }
 .scrollable-menu::-webkit-scrollbar {
