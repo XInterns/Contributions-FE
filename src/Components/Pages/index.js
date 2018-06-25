@@ -12,6 +12,7 @@ constructor(props)
     }
     this.createButton = this.createButton.bind(this);
     this.changeVal=this.changeVal.bind(this);
+    this.returnLimit=this.returnLimit.bind(this);
 }
 
 changeVal(event)
@@ -30,18 +31,22 @@ createButton(start,i)
        <button className="inactive"  key={i} onClick={this.changeVal} value={start}>{start}</button>
     );
 }
+returnLimit(total)
+{
+    var set_limit=Config.limit;
+    return total<set_limit?total:set_limit;
+}
 
 render (){
     var i;
-    var set_limit=Config.limit;
     //This will set the limit of page buttons to 5 , if number of pages are more than 5.
-   var limit=this.props.total<set_limit?this.props.total:set_limit;
+   var limit=this.returnLimit(this.props.total);
    var buttons=[];
    var currentPage=this.props.currentPage;
    var total=this.props.total;
    //This will calculate the starting button from where the rendering of page buttons should start
    var start=(currentPage<=parseInt((limit+1)/2,10))?1:((total-currentPage)<parseInt((limit+1)/2,10)?(total)-(limit-1):(currentPage-(parseInt((limit+1)/2,10)-1)));
-  //4<=3false //15-4<3 false
+ 
    buttons.push(<button onClick={this.changeVal} key={0} value={1}>&laquo;</button>)
    for(i=0;i<limit;i++)
    {

@@ -7,7 +7,7 @@ Enzyme.configure({ adapter: new Adapter() });
 describe('testing test component',()=>{
     it('Check if it contains contri_body',()=>{
         const wrapper = shallow(<Body/>);
-        expect(wrapper.find('div.contri_body')).toHaveLength(1);
+        expect(wrapper.find('.contri_body').exists()).toEqual(true);
     });
    
     it('Check if Contain Search ',()=>{
