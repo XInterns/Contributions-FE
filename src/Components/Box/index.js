@@ -7,13 +7,9 @@ import Contribution from '../Contribution';
 
 export default class Box extends Component {
 
-  clickEvent()
-  {
-
-  }
     render() {
       return (
-        <div className="details" onClick={this.clickEvent}>
+        <div className="details" onClick={()=>{}}>
          
           <div className="row1">
 
