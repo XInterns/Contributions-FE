@@ -19,7 +19,7 @@
     border: 1px solid #337ab7;
 }
 
-.pagination button:hover:not(.active) {background-color: #ddd;}
+.pagination button:hover:not(.active) {background-color: white;}
 
 .pagination button:first-child {
     border-top-left-radius: 5px;
@@ -29,4 +29,10 @@
 .pagination button:last-child {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+}
+
+@media (max-width: 480px) {
+    .pagination button {
+        padding: 10px 16px;
+    }
 }

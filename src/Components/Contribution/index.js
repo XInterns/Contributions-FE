@@ -31,7 +31,7 @@ export default class Contribution extends Component {
         if(temp[0]!=null)
         {
           finallink.push(temp[0])
-          finallink.push(<a href={no_link[i]} key={i} >{no_link[i]}</a> );
+          finallink.push(<a href={no_link[i]} key={i} target="_blank">{no_link[i]}</a> );
           if(temp[1]!=null)
           {
           last =temp[1];
