@@ -46,7 +46,7 @@ render (){
    var currentPage=parseInt(this.props.currentPage,10);
    var total=parseInt(this.props.total,10);
    if(total===1)
-    return (<div></div>)
+    return (<div />)
    //This will calculate the starting button from where the rendering of page buttons should start
    var start=(currentPage<=parseInt((limit+1)/2,10))?1:((total-currentPage)<parseInt((limit+1)/2,10)?(total)-(limit-1):(currentPage-(parseInt((limit+1)/2,10)-1)));
  
