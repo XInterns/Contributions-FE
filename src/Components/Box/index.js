@@ -25,7 +25,7 @@ export default class Box extends Component {
           </div>
          
           <div className="row2">
-          <Contribution content={this.props.it.mesage} />
+          <Contribution content={this.props.it.message} />
           </div>
         
         </div>
