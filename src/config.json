@@ -1,0 +1,6 @@
+{
+    "baseurl" :"http://192.168.2.128:5000/search?queryparam=",
+    "tagurl": "http://192.168.2.128:5000/tag",
+    "tagsearch": "http://192.168.2.128:5000/taginfo?tag=",
+    "limit":5
+}

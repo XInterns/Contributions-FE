@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './index.css'
-    
+import Tags from '../Tags/'
+import Config from '../../config.json';
+
 function debounce(fn, delay) {
   var timer = null;
   return function () {
@@ -12,15 +14,21 @@ function debounce(fn, delay) {
   };
 }
 
-class Search extends Component {
+
+export default class Search extends Component {
   constructor(props)
   {
     super(props)
     this.state= {
+        items: [],
          value:'',
     }
     this.onValChange = this.onValChange.bind(this);
     this.onButtonClick = this.onButtonClick.bind(this); 
+    this.TagsReq=this.TagsReq.bind(this);
+    this.SeeAll=this.SeeAll.bind(this);
+    this.fetchresults=this.fetchresults.bind(this);
+   
   }
   
   componentWillMount() {
@@ -41,13 +49,82 @@ class Search extends Component {
     this.props.onGoClick(id);
   }
 
+ TagsReq(val){
+  this.setState({
+    value:""
+  })
+  this.props.onTagClick(val);
+ }
+
+SeeAll()
+{
+  this.setState({
+    value:""
+  })
+  this.props.SeeAll();
+}
+
+fetchresults()
+{
+    fetch(`${Config.tagurl}`)
+      .then((response) => response.json())
+      .then(
+        parsedJson => {
+          this.setState({
+            items: parsedJson,
+            isLoading: false,
+          });
+        })
+      .catch(
+        
+        (error) => {
+          this.setState({
+            error,
+            isLoading: false
+          });
+        }
+      )
+}
+
+  componentDidMount()
+  {
+    this.fetchresults();
+  }
+  
+  renderTag(item,i) {
+    return (
+     
+      <Tags it={item} key={i} TagsRequest={this.TagsReq}/>
+      
+  )
+  }
   render() {
     return (
-      <div className="Div2">
-        <div className="Tag">
+      <div className="taskbar">
+        <div className="tag">      
+          {
+            this.state.items.slice(0,4).map((item,i) => (
+              this.renderTag(item,i)
+            ))
+          }
+          <div className = "dropdown">
+            <span className="dropdown-toggle" data-toggle="dropdown" > Tags 
+                                                                                     
+            <span className = "caret"> </span> </span>
+            <ul className = "dropdown-menu scrollable-menu pull-right">
+            <li><span id="Tags">
+            {
+            this.state.items.map((item,i) => (
+              this.renderTag(item,i)
+            ))
+          }</span></li>
+            </ul>
+      
+          </div>
+          <div><span className="home" onClick={this.SeeAll}> See All</span></div>
         </div>
-        <div className="Search">
-          <input className="Searchbox" type="text" value={this.state.value} placeholder="Search Here" onChange={this.onValChange} ></input>
+        <div className="search">
+          <input className="searchbox" type="text" value={this.state.value} placeholder="Search Here" onChange={this.onValChange} ></input>
           <button type="submit" className="button" onClick={this.onButtonClick}><span className="go">Go</span></button>
         </div>
       </div>
@@ -55,4 +132,4 @@ class Search extends Component {
   }
 }
 
-export default Search;
+

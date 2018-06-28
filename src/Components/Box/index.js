@@ -9,12 +9,27 @@ export default class Box extends Component {
 
     render() {
       return (
-        <div className="Rectangle-2">
-          <Picture pic={(this.props.it).name} />
-          <Name name={(this.props.it).name} />
-          <Date date={(this.props.it).height} />
-          <Contribution content={(this.props.it).mass+"sadjkandkjasndjaskndkasjndaskjjd bnkjasnbdkjasdkjasbdkaj sbddkjasjbdkja sjbdkjasbdasskj jdbaskjjdbsakj dbaskjbdkjas jbdkjasbdkja sjbdkjasbdkasd bsaskjjdbsak jdbkjasdjasjdk jasjdbasbdkja sbdkjasbdkjas bdjkasdb b"} />
+        <div className="details" onClick={()=>{}}>
+         
+          <div className="row1">
+
+              <div className="col1">
+                  <Picture pic={this.props.it.contributor_name} />
+                  <Name name={this.props.it.contributor_name} />
+              </div>
+          
+              <div className="col2">
+                  <Date date={this.props.it.creation_date} />
+          
+              </div>
+          </div>
+         
+          <div className="row2">
+          <Contribution content={this.props.it.message} />
+          </div>
+        
         </div>
+
       )
     }
   }

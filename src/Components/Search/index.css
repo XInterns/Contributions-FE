@@ -1,34 +1,162 @@
-.bar
+.taskbar
 {
-   display: flex;
+  display: inline-block;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  margin-top:1.3%;
+  flex-direction: row;
 }
- .Searchbox {
-    width:85%;
+
+  .tag 
+  {
+    width: 66%;
     height: 100%;
-    background-image: url("icon.svg"); 
-    background-repeat: no-repeat;
-    background-size: 7%;
-    background-position-x: 4%;
-    background-position-y: 50%;
     background-color: white;
-    text-indent:15%;
-    border: solid 0.5px #4a90e2;
-  }
-  .button {
-    width: 15%;
-    height: 100%;
-    background-color:#4a90e2;
     border: solid 0.5px rgba(151, 151, 151, 0.2);
+    display: flex;
+    justify-content:space-around;
+    align-items:center;
+    color: #337ab7;
+    cursor: pointer;
+  }
+  .tag:hover
+  {
+  color: #23527c;
+  }   
+  .search
+  {
+    width:32%;
+    height: 100%;
+    margin-left:2%;
+    display: flex;
+    flex-direction: row;          
   }
 
-  .go{
-        font-family: 'Muli',sans-serif;
-        font-size: 100%;
-        font-weight: 600;
-        letter-spacing: 0.4px;
-        color: #ffffff;
-      
-  } 
+      .searchbox {
+        outline: none;
+        width:85%;
+        opacity: 0.8;
+        background-image: url("icon.svg"); 
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-position-x: 4%;
+        background-position-y: 50%;
+        background-color: white;
+        text-indent:35px;
+        border: solid 0.5px #4a90e2;
+        border-radius: 5px 0px 0px 5px;
+      }
 
+      .button {
+        width: 15%;
+        background-color:#4a90e2;
+        border: solid 0.5px rgba(151, 151, 151, 0.2);
+        border-radius: 0px 5px 5px 0px;
+      }
+
+      .go{
+            font-size: 100%;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+            color: #ffffff;
+          
+      } 
+
+.dropdown-menu 
+{
+  text-align: left;
+  padding-left:10px;
+  transform: translate(40%,0);
+}
+.dropdown-toggle 
+{
+  color: #337ab7;
+  cursor: pointer;
+}
+.dropdown-toggle:hover
+{
+  color: #23527c;
+  text-decoration: underline;
+}
+
+.home
+{
+  color: #337ab7;
+  cursor: pointer;
+}
+.home:hover
+{
+  color: #23527c;
+  text-decoration: underline;
+}
+.scrollable-menu {
+  height: auto;
+  max-height: 350px;
+  overflow-x: hidden;
+}
+.scrollable-menu::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 6px;      
+}    
+.scrollable-menu::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #337ab7;      
+}
+#Tags{
+  background-color: #ffffff;
+}
+
+  @media (min-width: 481px) and (max-width: 767px) {
+  
+    .taskbar {
+      height: 32px;
+    }
+
+    .searchbox {
+      background-size: 17px;
+      text-indent:30px;
+      width: 75%;
+      font-size: 12px;
+    }
+
+    .button {
+      width: 25%;
+    }
+  
+  }
 
    
+
+  @media (max-width: 480px) {
+  
+
+    .taskbar 
+    {
+      height: 70px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-top: 2%;
+    }
+    .tag 
+    {
+      height: 50%;
+      width: 100%;
+      background-color: white;
+    
+    }
+    .search
+    {
+      height: 50%;
+      width: 100%;
+      margin-top: 2%; 
+      margin-left:0%;
+    }
+
+    .searchbox 
+    {
+      background-size: 17px;
+      text-indent:40px;
+    }
+  
+    }

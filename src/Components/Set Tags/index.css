@@ -1,0 +1,9 @@
+.tag_element{
+    color: #337ab7;
+    cursor: pointer;
+    
+}
+.tag_element:hover{
+    color: #23527c;
+    text-decoration: underline;
+}
